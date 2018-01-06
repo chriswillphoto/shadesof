@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.menu {
+  background-color: rgba(0,0,0,0.7);
+  height: 100vh;
+  position: fixed;
+  width: 20vw;
+}
+
+.viewer {
+  position: absolute;
+  left: 20vw;
+  height: 120vh;
+  width: 80vw;
+  background-color: cornsilk;
+  font-size: 0;
+  text-align: left;
+  /*padding-top: 20px;*/
+}
+
+#loading {
+  font-size: 20px;
+}
+
+/*.viewer * {
+  font-size: 20px;
+}*/
+
+.swatch {
+  height: 10vw;
+  width: 10vw;
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: transparent;
+  font-size: 20px;
+  line-height: 10vw;
+  transition: all 0.6s;
+  vertical-align: top;
+  position: relative;
+  text-align: center;
+}
+
+.swatch:before {
+  box-shadow: 0 0 5px 1px black;
+  content: '';
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 1s;
+  z-index: 2;
+}
+
+.swatch:hover:before {
+  opacity: 1;
+}
+
+
+
+.swatch:hover {
+  color: rgba(255,255,255,0.9);
+  cursor: pointer;
+  transform: scale(1.2) translateY(5px);
+  z-index: 2;
+  text-shadow: 0 0 3px black;
+}
+
+.detail-viewer-container {
+  position: absolute;
+  background-color: rgba(0,0,0,0.6);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+.detail-viewer {
+  position: fixed;
+  /*filter: brightness(0.5);*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 600px;
+  width: 400px;
+  font-size: 20px;
+  background-color: white;
+  z-index: 4;
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out 0s 1;
+}
+
+.detail-banner {
+  height: 400px;
+  width: 100%;
+  color: white;
+  text-shadow: 0 0 8px 0 black;
+  line-height: 400px;
+}
+
+.detail-viewer h5 {
+  margin: 10px 0;
+}
+
+.detail-viewer h6{
+  display: inline-block;
+  width: 50%;
+}
+
+.detail-viewer p {
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+.close-detail {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 5;
+  height: 40px;
+  line-height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid white;
+  transition: transform 0.7s;
+}
+
+.close-detail:hover {
+  transform: scale(1.2);
+}
+
+@keyframes swatches {
+  0% {transform: translateY(50px); opacity: 0;}
+  100% {transform: translateY(0px);}
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+}
